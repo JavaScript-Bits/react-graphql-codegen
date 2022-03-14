@@ -1,0 +1,18 @@
+overwrite: true
+schema: "http://127.0.0.1:3333/graphql"
+documents: "src/graphql/*.graphql"
+
+config:
+  enumsAsConst: true
+  maybeValue: T | undefined
+
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+#      - "typescript-graphql-files-modules"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

@@ -1,0 +1,25 @@
+# This file was generated based on "graphql.schema.json". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    createUser(email: String!, password: String!, username: String!): User!
+    userLogin(email: String!, password: String!): User
+    userLogout: User
+}
+
+type Query {
+    user(id: Int!): User
+    users: [User!]
+}
+
+type User {
+    email: String!
+    id: Int!
+    message: String
+    token: String
+    username: String!
+}
